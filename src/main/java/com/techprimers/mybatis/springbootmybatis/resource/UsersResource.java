@@ -38,4 +38,26 @@ public class UsersResource {
 
         return usersMapper.findAll();
     }
+
+    @GetMapping("/update")
+    public List<Users> update(){
+
+        Users users = new Users();
+        users.setName("updated");
+        users.setSalary(999999L);
+        usersMapper.update(users);
+
+        return usersMapper.findAll();
+    }
+
+    @GetMapping("/delete")
+    public List<Users> delete(){
+
+        Users users = new Users();
+        users.setName("new insert");
+        usersMapper.delete(users);
+
+        return usersMapper.findAll();
+    }
+
 }
